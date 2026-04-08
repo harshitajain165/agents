@@ -105,12 +105,6 @@ class TTS(tts.TTS):
                 " SMALLEST_API_KEY environment variable"
             )
 
-        if (consistency or similarity or enhancement) and model != "lightning-v2":
-            logger.warning(
-                "consistency, similarity, and enhancement are only supported for lightning-v2 "
-                "and will be ignored for other models."
-            )
-
         self._opts = _TTSOptions(
             model=model,
             api_key=api_key,
